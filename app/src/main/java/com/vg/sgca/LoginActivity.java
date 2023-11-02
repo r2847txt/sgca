@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 public class LoginActivity extends AppCompatActivity {
 
+    // mensaje de prueba 02
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
