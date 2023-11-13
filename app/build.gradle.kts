@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "com.vg.sgca"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.vg.sgca"
         minSdk = 21
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
