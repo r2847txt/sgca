@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "692633191247",
+    "firebase_url": "https://sgc-vg-default-rtdb.firebaseio.com",
+    "project_id": "sgc-vg",
+    "storage_bucket": "sgc-vg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692633191247:android:ef146f79333758e6a17b3a",
+        "android_client_info": {
+          "package_name": "com.certamenVG.sistemagestioncitas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmCGRo-VrHJXzM-tcVOjTva4GRXEzZaSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692633191247:android:f0c1dd01e605209ca17b3a",
+        "android_client_info": {
+          "package_name": "com.vg.sgca"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmCGRo-VrHJXzM-tcVOjTva4GRXEzZaSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
