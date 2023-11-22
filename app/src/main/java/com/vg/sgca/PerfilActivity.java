@@ -42,11 +42,12 @@ public class PerfilActivity extends AppCompatActivity {
                 //finish();
                 return true;
             } else if (itemId == R.id.bottom_soporte) {
+                startActivity(new Intent(getApplicationContext(), SoporteActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 //finish();
                 return true;
             } else if (itemId == R.id.bottom_perfil) {
-                startActivity(new Intent(getApplicationContext(), PerfilActivity.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
                 //finish();
                 return true;
             }
