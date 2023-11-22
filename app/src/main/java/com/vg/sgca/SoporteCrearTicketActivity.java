@@ -7,21 +7,19 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class SoporteActivity extends AppCompatActivity {
+public class SoporteCrearTicketActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_soporte);
+        setContentView(R.layout.activity_soporte_crear_ticket);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Soporte");
+        getSupportActionBar().setTitle("Ticket de soporte");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
@@ -54,8 +52,6 @@ public class SoporteActivity extends AppCompatActivity {
             }
             return false;
         });
-
-
     }
 
     @Override
@@ -64,16 +60,5 @@ public class SoporteActivity extends AppCompatActivity {
             finish();
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    public void citasCrearTicket(View view) {
-        try {
-            Intent intent = new Intent(this, SoporteCrearTicketActivity.class);
-            startActivity(intent);
-        }catch (Exception ex) {
-            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "Excepcion " + ex.getMessage(),
-                    Toast.LENGTH_SHORT).show();
-        }
     }
 }

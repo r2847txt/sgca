@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SoporteActivity">
+    tools:context=".SoporteCrearTicketActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -22,31 +22,39 @@
         android:layout_marginTop="80dp">
 
         <TextView
-            android:id="@+id/textView22"
+            android:id="@+id/textView20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tickets recientes"
-            android:textSize="24sp" />
+            android:text="Ingrese un asunto" />
 
-        <ListView
+        <EditText
+            android:id="@+id/editTextText6"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="20sp"/>
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:inputType="text" />
 
         <TextView
-            android:id="@+id/textView23"
+            android:id="@+id/textView21"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ingresar nuevo ticket"
-            android:textSize="24sp" />
+            android:text="Ingrese los detalles de su problema" />
+
+        <EditText
+            android:id="@+id/editTextTextMultiLine2"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine" />
 
         <Button
-            android:id="@+id/button13"
+            android:id="@+id/button12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20sp"
-            android:text="Nuevo ticket"
-            android:onClick="citasCrearTicket"/>
+            android:text="Ingresar ticket" />
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
