@@ -16,7 +16,7 @@
         android:title="Notificaciones"/>
 
     <item
-        android:id="@+id/bottom_tickets"
+        android:id="@+id/bottom_soporte"
         android:icon="@drawable/baseline_support_agent_24"
         android:title="Soporte"/>
 

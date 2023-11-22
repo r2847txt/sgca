@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class MainActivity extends AppCompatActivity {
 
     // 4 botones con las principales acciones
@@ -22,6 +24,36 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Inicio");
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_inicio);
+
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+            if (itemId == R.id.bottom_inicio) {
+                return true;
+            } else if (itemId == R.id.bottom_citas) {
+                startActivity(new Intent(getApplicationContext(), CitasActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                //finish();
+                return true;
+            } else if (itemId == R.id.bottom_notificaciones) {
+                startActivity(new Intent(getApplicationContext(), NotificacionesActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                //finish();
+                return true;
+            } else if (itemId == R.id.bottom_soporte) {
+                startActivity(new Intent(getApplicationContext(), SoporteActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                //finish();
+                return true;
+            } else if (itemId == R.id.bottom_perfil) {
+                startActivity(new Intent(getApplicationContext(), PerfilActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                //finish();
+                return true;
+            }
+            return false;
+        });
     }
 
     public void citas(View view) {
