@@ -7,21 +7,19 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class CitasActivity extends AppCompatActivity {
+public class CitasCrearActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_citas);
+        setContentView(R.layout.activity_citas_crear);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Citas");
+        getSupportActionBar().setTitle("Detalle de cita");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
@@ -62,16 +60,5 @@ public class CitasActivity extends AppCompatActivity {
             finish();
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    public void citasCrear(View view) {
-        try {
-            Intent intent = new Intent(this, CitasCrearActivity.class);
-            startActivity(intent);
-        }catch (Exception ex) {
-            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "Excepcion " + ex.getMessage(),
-                    Toast.LENGTH_SHORT).show();
-        }
     }
 }
