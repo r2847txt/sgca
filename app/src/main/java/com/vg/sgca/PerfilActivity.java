@@ -7,16 +7,33 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class PerfilActivity extends AppCompatActivity {
+    Button bt_cerrarSesion;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
+        bt_cerrarSesion = findViewById(R.id.bt_cerrarSesion);
+        mAuth = FirebaseAuth.getInstance();
 
+        bt_cerrarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                finish();
+                startActivity(new Intent(PerfilActivity.this, LoginActivity.class));
+            }
+        });
+
+        //NAVEGACION
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Perfil");

@@ -28,8 +28,8 @@
             android:text="Tickets recientes"
             android:textSize="24sp" />
 
-        <ListView
-            android:id="@+id/lv_listarTicket"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_listarTickets"
             android:layout_width="match_parent"
             android:layout_height="379dp"
             android:layout_marginBottom="20sp" />
@@ -48,6 +48,7 @@
             android:layout_marginTop="20sp"
             android:text="Nuevo ticket"
             android:onClick="citasCrearTicket"/>
+
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
