@@ -12,30 +12,28 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
-
-    // 4 botones con las principales acciones
+public class CitasActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_citas);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Inicio");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setTitle("Citas");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.bottom_inicio);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_citas);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
             if (itemId == R.id.bottom_inicio) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 return true;
             } else if (itemId == R.id.bottom_citas) {
-                startActivity(new Intent(getApplicationContext(), CitasActivity.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 //finish();
                 return true;
             } else if (itemId == R.id.bottom_notificaciones) {
@@ -66,42 +64,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void citas(View view) {
+    public void citasCrear(View view) {
         try {
-            Intent intent = new Intent(this, CitasActivity.class);
-            startActivity(intent);
-        }catch (Exception ex) {
-            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "Excepcion " + ex.getMessage(),
-                    Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void notificaciones(View view) {
-        try {
-            Intent intent = new Intent(this, NotificacionesActivity.class);
-            startActivity(intent);
-        }catch (Exception ex) {
-            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "Excepcion " + ex.getMessage(),
-                    Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void soporte(View view) {
-        try {
-            Intent intent = new Intent(this, SoporteActivity.class);
-            startActivity(intent);
-        }catch (Exception ex) {
-            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "Excepcion " + ex.getMessage(),
-                    Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void perfil(View view) {
-        try {
-            Intent intent = new Intent(this, PerfilActivity.class);
+            Intent intent = new Intent(this, CitasCrearActivity.class);
             startActivity(intent);
         }catch (Exception ex) {
             Toast.makeText(this, "", Toast.LENGTH_SHORT).show();

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "364958459505",
+    "project_id": "bd-sgca",
+    "storage_bucket": "bd-sgca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364958459505:android:eaab775a70bbdd4e3f1dd0",
+        "android_client_info": {
+          "package_name": "com.vg.sgca"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx_HqJQOPD8bK8Wp0yCVp9SesjTxo2Yl0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

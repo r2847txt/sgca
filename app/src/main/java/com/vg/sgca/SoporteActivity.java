@@ -8,30 +8,43 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
-
-    // 4 botones con las principales acciones
+public class SoporteActivity extends AppCompatActivity {
+    Button bt_nuevoTicket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_soporte);
 
+        bt_nuevoTicket = findViewById(R.id.bt_nuevoTicket);
+
+        bt_nuevoTicket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SoporteActivity.this, SoporteCrearTicketActivity.class));
+            }
+        });
+
+
+        //NAVEGACION
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Inicio");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setTitle("Soporte");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.bottom_inicio);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_soporte);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
             if (itemId == R.id.bottom_inicio) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 return true;
             } else if (itemId == R.id.bottom_citas) {
                 startActivity(new Intent(getApplicationContext(), CitasActivity.class));
@@ -44,8 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 //finish();
                 return true;
             } else if (itemId == R.id.bottom_soporte) {
-                startActivity(new Intent(getApplicationContext(), SoporteActivity.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 //finish();
                 return true;
             } else if (itemId == R.id.bottom_perfil) {
@@ -56,8 +67,11 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         });
+
+
     }
 
+    //NAVEGACION
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==android.R.id.home){
@@ -66,42 +80,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void citas(View view) {
+    public void citasCrearTicket(View view) {
         try {
-            Intent intent = new Intent(this, CitasActivity.class);
-            startActivity(intent);
-        }catch (Exception ex) {
-            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "Excepcion " + ex.getMessage(),
-                    Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void notificaciones(View view) {
-        try {
-            Intent intent = new Intent(this, NotificacionesActivity.class);
-            startActivity(intent);
-        }catch (Exception ex) {
-            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "Excepcion " + ex.getMessage(),
-                    Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void soporte(View view) {
-        try {
-            Intent intent = new Intent(this, SoporteActivity.class);
-            startActivity(intent);
-        }catch (Exception ex) {
-            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "Excepcion " + ex.getMessage(),
-                    Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void perfil(View view) {
-        try {
-            Intent intent = new Intent(this, PerfilActivity.class);
+            Intent intent = new Intent(this, SoporteCrearTicketActivity.class);
             startActivity(intent);
         }catch (Exception ex) {
             Toast.makeText(this, "", Toast.LENGTH_SHORT).show();

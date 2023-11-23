@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".PerfilActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -21,36 +21,39 @@
         android:padding="20sp"
         android:layout_marginTop="80dp">
 
-        <Button
-            android:id="@+id/button4"
+        <TextView
+            android:id="@+id/textView19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Citas"
-            android:onClick="citas"/>
+            android:layout_marginBottom="20sp"
+            android:text="Datos de usuario:"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="{{ nombre }}" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="{{ apellido }}" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="{{ correo }}" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/bt_cerrarSesion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Notificaciones"
-            android:onClick="notificaciones"/>
-
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Soporte"
-            android:onClick="soporte"/>
-
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Perfil"
-            android:onClick="perfil"/>
+            android:layout_marginTop="20sp"
+            android:text="Cerrar sesión" />
     </LinearLayout>
-
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"

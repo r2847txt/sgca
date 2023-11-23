@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SoporteActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -21,36 +21,35 @@
         android:padding="20sp"
         android:layout_marginTop="80dp">
 
-        <Button
-            android:id="@+id/button4"
+        <TextView
+            android:id="@+id/textView22"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Citas"
-            android:onClick="citas"/>
+            android:text="Tickets recientes"
+            android:textSize="24sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_listarTickets"
+            android:layout_width="match_parent"
+            android:layout_height="379dp"
+            android:layout_marginBottom="20sp" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingresar nuevo ticket"
+            android:textSize="24sp" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/bt_nuevoTicket"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Notificaciones"
-            android:onClick="notificaciones"/>
+            android:layout_marginTop="20sp"
+            android:text="Nuevo ticket"
+            android:onClick="citasCrearTicket"/>
 
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Soporte"
-            android:onClick="soporte"/>
-
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Perfil"
-            android:onClick="perfil"/>
     </LinearLayout>
-
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
