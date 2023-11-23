@@ -76,4 +76,15 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
         }
     }
+
+    public void registrar(View view) {
+        try {
+            Intent intent = new Intent(this, RegisterActivity.class);
+            startActivity(intent);
+        }catch (Exception ex) {
+            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Excepcion " + ex.getMessage(),
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
 }
