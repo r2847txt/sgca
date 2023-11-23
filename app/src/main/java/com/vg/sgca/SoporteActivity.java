@@ -8,17 +8,30 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class SoporteActivity extends AppCompatActivity {
+    Button bt_nuevoTicket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_soporte);
 
+        bt_nuevoTicket = findViewById(R.id.bt_nuevoTicket);
+
+        bt_nuevoTicket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SoporteActivity.this, SoporteCrearTicketActivity.class));
+            }
+        });
+
+
+        //NAVEGACION
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Soporte");
@@ -58,6 +71,7 @@ public class SoporteActivity extends AppCompatActivity {
 
     }
 
+    //NAVEGACION
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==android.R.id.home){

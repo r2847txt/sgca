@@ -28,7 +28,7 @@
             android:text="Ingrese un asunto" />
 
         <EditText
-            android:id="@+id/editTextText6"
+            android:id="@+id/et_asuntoTicket"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -42,7 +42,7 @@
             android:text="Ingrese los detalles de su problema" />
 
         <EditText
-            android:id="@+id/editTextTextMultiLine2"
+            android:id="@+id/et_detalleTicket"
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:layout_marginBottom="20dp"
@@ -51,7 +51,7 @@
             android:inputType="textMultiLine" />
 
         <Button
-            android:id="@+id/button12"
+            android:id="@+id/bt_ingresarTicket"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ingresar ticket" />

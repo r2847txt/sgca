@@ -28,7 +28,7 @@
             android:text="Nombre:" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/et_nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -41,7 +41,7 @@
             android:text="Apellido:" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/et_apellido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -54,7 +54,7 @@
             android:text="Rut:" />
 
         <EditText
-            android:id="@+id/editTextText3"
+            android:id="@+id/et_rut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -67,7 +67,7 @@
             android:text="Correo:" />
 
         <EditText
-            android:id="@+id/editTextText4"
+            android:id="@+id/et_correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -80,7 +80,7 @@
             android:text="Contraseña:" />
 
         <EditText
-            android:id="@+id/editTextNumberPassword"
+            android:id="@+id/et_pass1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -93,14 +93,14 @@
             android:text="Repetir contraseña" />
 
         <EditText
-            android:id="@+id/editTextNumberPassword2"
+            android:id="@+id/et_pass2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/bt_registrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50sp"

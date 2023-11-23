@@ -29,9 +29,10 @@
             android:textSize="24sp" />
 
         <ListView
+            android:id="@+id/lv_listarTicket"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="20sp"/>
+            android:layout_height="379dp"
+            android:layout_marginBottom="20sp" />
 
         <TextView
             android:id="@+id/textView23"
@@ -41,7 +42,7 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/button13"
+            android:id="@+id/bt_nuevoTicket"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
