@@ -49,6 +49,25 @@ public class SoporteCrearTicketActivity extends AppCompatActivity {
                     postTicket(asuntoTicket, detalleTicket);
                 }
             }
+
+            private void postTicket(String asuntoTicket, String detalleTicket) {
+                Map<String, Object> map = new HashMap<>();
+                map.put("asunto_ticket", asuntoTicket);
+                map.put("detalle_ticket", detalleTicket);
+                map.put("estado", "PENDIENTE"); // Cambia "PENDIENTE" según tus necesidades
+                mfirestore.collection("ticket").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Toast.makeText(SoporteCrearTicketActivity.this, "Ticket ingresado", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(SoporteCrearTicketActivity.this, "No se pudo guardar", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
         });
 
 

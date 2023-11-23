@@ -31,8 +31,20 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_listarTickets"
             android:layout_width="match_parent"
-            android:layout_height="379dp"
-            android:layout_marginBottom="20sp" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/textViewAsunto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Asunto" />
+
+        <TextView
+            android:id="@+id/textViewDetalles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Detalles" />
 
         <TextView
             android:id="@+id/textView23"
@@ -46,8 +58,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
-            android:text="Nuevo ticket"
-            android:onClick="citasCrearTicket"/>
+            android:onClick="citasCrearTicket"
+            android:text="Nuevo ticket" />
+
+
+
 
     </LinearLayout>
 
