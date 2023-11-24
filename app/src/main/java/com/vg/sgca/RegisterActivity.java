@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -28,6 +29,8 @@ public class RegisterActivity extends AppCompatActivity {
     Button bt_registrar;
     FirebaseFirestore mFirestore;
     FirebaseAuth mAuth;
+
+    String idUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,25 +94,26 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(correoUsuario, claveUsuario).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                String idUsuario = mAuth.getCurrentUser().getUid();
+                idUsuario = mAuth.getCurrentUser().getUid();
 
-                Map<String, Object> map = new HashMap<>();
-                map.put("id_u", idUsuario);
-                map.put("nombre_u", nombreUsuario);
-                map.put("apellido_u", apellidoUsuario);
-                map.put("rut_u", rutUsuario);
-                map.put("correo_u", correoUsuario);
-                map.put("clave_u", claveUsuario);
+                Map<String, Object> user = new HashMap<>();
+                user.put("id_u", idUsuario);
+                user.put("nombre_u", nombreUsuario);
+                user.put("apellido_u", apellidoUsuario);
+                user.put("rut_u", rutUsuario);
+                user.put("correo_u", correoUsuario);
+                user.put("clave_u", claveUsuario);
 
-                mFirestore.collection("usuario").document(idUsuario).set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                mFirestore.collection("usuario").document(idUsuario).set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Toast.makeText(RegisterActivity.this, "Error al guardar", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "Registrado exitosamente", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(RegisterActivity.this, "Registrado con exito", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "Error en registro", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                         finish();
                     }
