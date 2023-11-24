@@ -25,10 +25,10 @@
             android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre:" />
+            android:text="Asunto:" />
 
         <EditText
-            android:id="@+id/editTextText5"
+            android:id="@+id/et_asuntoCita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
@@ -36,15 +36,16 @@
             android:inputType="text" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/tv_fechaSeleccionada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Fecha:" />
 
-        <EditText
-            android:id="@+id/editTextDate"
+        <Button
+            android:id="@+id/bt_seleccionarFecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Seleccionar fecha"
             android:layout_marginBottom="20sp"
             android:ems="10"
             android:inputType="date" />
@@ -56,7 +57,7 @@
             android:text="Detalle:" />
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/et_detalleCita"
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:layout_marginBottom="30sp"
@@ -69,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10sp"
-            android:text="Confirmar" />
+            android:text="Enviar solicitud" />
 
         <Button
             android:id="@+id/button10"
